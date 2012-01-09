@@ -36,7 +36,7 @@ class Robo47_DirectoryHasher_Source_Multi implements Robo47_DirectoryHasher_Sour
      */
     public function getFileResults() {
         $this->loadSources();
-        return $this->result->toArray();
+        return $this->result->getIterator()->getArrayCopy();
     }
 
 }

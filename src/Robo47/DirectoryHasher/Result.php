@@ -48,13 +48,4 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate
     public function getIterator() {
         return new ArrayIterator($this->results);
     }
-
-    /**
-     *
-     * @return array
-     */
-    public function toArray()
-    {
-        return $this->results;
-    }
 }

@@ -16,10 +16,9 @@ class Robo47_DirectoryHasher_Result_File
      * @param type $filename
      * @param array $hashes
      */
-    public function __construct($filename, array $hashes = array())
+    public function __construct($filename)
     {
         $this->filename = $filename;
-        $this->hashes = $hashes;
     }
 
     /**
@@ -49,13 +48,4 @@ class Robo47_DirectoryHasher_Result_File
         return $this->hashes;
     }
 
-    /**
-     * @return array
-     */
-    public function toArray()
-    {
-        return array(
-            $this->getFilename() => $this->getHashes()
-        );
-    }
 }
