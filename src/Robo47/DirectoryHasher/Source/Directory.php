@@ -40,13 +40,15 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
         }
         $iter = new RecursiveIteratorIterator(
                         new RecursiveDirectoryIterator(
-                                $this->directory, RecursiveDirectoryIterator::SKIP_DOTS
+                                $this->directory
                         ),
                         RecursiveIteratorIterator::LEAVES_ONLY
         );
         foreach ($iter as $file) {
             /* @var $file SplFileInfo */
-            $this->results[] = new Robo47_DirectoryHasher_Result_File($file);
+            if ($file->getFilename() !== '.' && $file->getFilename() !== '..') {
+                $this->results[] = new Robo47_DirectoryHasher_Result_File($file);
+            }
         }
         $this->loaded = true;
     }
