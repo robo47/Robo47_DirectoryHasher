@@ -13,8 +13,7 @@ class Robo47_DirectoryHasher_Result_File
     protected $hashes;
 
     /**
-     * @param type $filename
-     * @param array $hashes
+     * @param string $filename
      */
     public function __construct($filename)
     {
