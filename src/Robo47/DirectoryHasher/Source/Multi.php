@@ -10,9 +10,13 @@ class Robo47_DirectoryHasher_Source_Multi implements Robo47_DirectoryHasher_Sour
     protected $loaded = false;
 
     /**
-     *
-     * @param array $sources
+     * @var Robo47_DirectoryHasher_Result
+     */
+    protected $result;
+
+    /**
      * @param array|Robo47_DirectoryHasher_Source_Interface[] $sources
+     * @param Robo47_DirectoryHasher_Result $result
      */
     public function __construct(array $sources, Robo47_DirectoryHasher_Result $result = null) {
         $this->sources = $sources;
@@ -22,13 +26,20 @@ class Robo47_DirectoryHasher_Source_Multi implements Robo47_DirectoryHasher_Sour
         $this->result = $result;
     }
 
+    /**
+     * Fetches fileresults from all sources
+     */
     protected function loadSources() {
+        if ($this->loaded === true) {
+            return;
+        }
         foreach ($this->sources as $source) {
             /* @var $source Robo47_DirectoryHasher_Source_Interface */
             $this->result->addFileResults(
                     $source->getFileResults()
             );
         }
+        $this->loaded = true;
     }
 
     /**
@@ -37,6 +48,14 @@ class Robo47_DirectoryHasher_Source_Multi implements Robo47_DirectoryHasher_Sour
     public function getFileResults() {
         $this->loadSources();
         return $this->result->getIterator()->getArrayCopy();
+    }
+
+    /**
+     * @return Robo47_DirectoryHasher_Result
+     */
+    public function getResult()
+    {
+        return $this->result;
     }
 
 }

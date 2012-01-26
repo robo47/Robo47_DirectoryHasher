@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Representation of a single File-Resulst 
+ */
 class Robo47_DirectoryHasher_Result_File
 {
     /**
@@ -14,13 +17,17 @@ class Robo47_DirectoryHasher_Result_File
 
     /**
      * @param string $filename
+     * @param array $hashes
      */
-    public function __construct($filename)
+    public function __construct($filename, array $hashes = array())
     {
         $this->filename = $filename;
+        $this->hashes = $hashes;
     }
 
     /**
+     * Returns filename
+     *
      * @return string
      */
     public function getFilename()
@@ -29,6 +36,8 @@ class Robo47_DirectoryHasher_Result_File
     }
 
     /**
+     * Adds a hash
+     *
      * @param string $name
      * @param string $value
      * @return Robo47_DirectoryHasher_Result_File *Provides fluent interface*
@@ -40,6 +49,8 @@ class Robo47_DirectoryHasher_Result_File
     }
 
     /**
+     * Returns hashs
+     *
      * @return array
      */
     public function getHashes()

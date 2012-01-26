@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<files>
+    <file name="/baa/foo.php">
+        <hash hash="md5">1a2a2fdad558101c11919fd3ceff48c1</hash>
+        <hash hash="sha1">9b41feb8a6c885e62afaf389e46646d742e67b0b</hash>
+        <hash hash="size">1000</hash>
+        <hash hash="mtime">1326082206</hash>
+    </file>
+    <file name="/baa/blub.php">
+        <hash hash="md5">560ab30cc8f0dc0acee0ad021e566fa3</hash>
+        <hash hash="sha1">14c2795436b9dca21344826efbe21ad9073d7a3</hash>
+        <hash hash="size">336</hash>
+        <hash hash="mtime">1326080004</hash>
+    </file>
+    <file name="/baa/baa.php">
+        <hash hash="md5">3644a1040147fb2a35dec51b2980e935</hash>
+        <hash hash="sha1">14c2795436b9dca8a6924826efbe21ad9073d7a3</hash>
+        <hash hash="size">84</hash>
+        <hash hash="mtime">1326076286</hash>
+    </file>
+</files>
