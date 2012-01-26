@@ -31,6 +31,8 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
     }
 
     /**
+     * Returns directory
+     * 
      * @return string
      */
     public function getDirectory()
@@ -39,7 +41,7 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
     }
 
     /**
-     *
+     * Uses iterator to create array of Result_File
      */
     protected function loadFiles() {
         if ($this->loaded === true) {

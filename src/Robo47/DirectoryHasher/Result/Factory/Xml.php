@@ -1,11 +1,12 @@
 <?php
 
 /**
- * Builds results from xml-files 
+ * Builds results from xml-files
  */
 class Robo47_DirectoryHasher_Result_Factory_Xml {
 
     /**
+     * Builds a Result from an xml-file
      *
      * @param string $filename
      * @return Robo47_DirectoryHasher_Result
@@ -17,6 +18,7 @@ class Robo47_DirectoryHasher_Result_Factory_Xml {
     }
 
     /**
+     * Builds a Result from a DOM-Object
      *
      * @param DOMDocument $document
      * @return Robo47_DirectoryHasher_Result
@@ -24,7 +26,7 @@ class Robo47_DirectoryHasher_Result_Factory_Xml {
     public function buildResultFromDOM(DOMDocument $document) {
         $result = new Robo47_DirectoryHasher_Result();
         $xpath = new DOMXPath($document);
-        
+
         $entries = $xpath->query('//files/file');
 
         foreach ($entries as $entry) {
@@ -42,6 +44,7 @@ class Robo47_DirectoryHasher_Result_Factory_Xml {
     }
 
     /**
+     * Returns an array with hashes from a file-node
      *
      * @param DomNode $node
      * @return array

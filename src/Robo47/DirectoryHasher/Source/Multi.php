@@ -26,6 +26,9 @@ class Robo47_DirectoryHasher_Source_Multi implements Robo47_DirectoryHasher_Sour
         $this->result = $result;
     }
 
+    /**
+     * Fetches fileresults from all sources
+     */
     protected function loadSources() {
         if ($this->loaded === true) {
             return;

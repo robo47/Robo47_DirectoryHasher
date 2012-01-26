@@ -1,5 +1,8 @@
 <?php
 
+/**
+ *
+ */
 class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
 
     /**
@@ -40,6 +43,8 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
     }
 
     /**
+     * Returns an ArrayIterator
+     *
      * @return ArrayIterator
      */
     public function getIterator() {
@@ -47,14 +52,16 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
     }
 
     /**
-     * @param string $file
+     * Checks if there is a FileResult for a specific filename
+     *
+     * @param string $filename
      * @return boolean
      */
-    public function hasFileResultFor($file) {
+    public function hasFileResultFor($filename) {
         foreach ($this->results as $result) {
             /* @var $result Robo47_DirectoryHasher_Result_File */
 
-            if ($file === $result->getFilename()) {
+            if ($filename === $result->getFilename()) {
                 return true;
             }
         }
@@ -62,13 +69,15 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
     }
 
     /**
-     * @param string $file
+     * Returns a FileResult for a specific filename
+     *
+     * @param string $filename
      * @return Robo47_DirectoryHasher_Result_File|null
      */
-    public function getFileResultFor($file) {
+    public function getFileResultFor($filename) {
         foreach ($this->results as $result) {
             /* @var $result Robo47_DirectoryHasher_Result_File */
-            if ($file === $result->getFilename()) {
+            if ($filename === $result->getFilename()) {
                 return $result;
             }
         }

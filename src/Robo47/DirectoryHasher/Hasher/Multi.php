@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Runs multiple hashers
+ */
 class Robo47_DirectoryHasher_Hasher_Multi implements Robo47_DirectoryHasher_Hasher_Interface {
 
     /**

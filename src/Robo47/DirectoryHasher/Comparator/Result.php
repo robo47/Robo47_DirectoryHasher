@@ -11,6 +11,8 @@ class Robo47_DirectoryHasher_Comparator_Result
     protected $differences = array();
 
     /**
+     * Adds a difference
+     * 
      * @param Robo47_DirectoryHasher_Comparator_Difference_Interface $difference
      * @return Robo47_DirectoryHasher_Comparator_Result *Provides fluent interface*
      */
@@ -21,6 +23,8 @@ class Robo47_DirectoryHasher_Comparator_Result
     }
 
     /**
+     * Add multiple differences
+     * 
      * @param array|Robo47_DirectoryHasher_Comparator_Difference_Interface[] $differences
      * @return Robo47_DirectoryHasher_Comparator_Result *Provides fluent interface*
      */
@@ -34,6 +38,8 @@ class Robo47_DirectoryHasher_Comparator_Result
     }
 
     /**
+     * Returns the collected differences
+     * 
      * @return array|Robo47_DirectoryHasher_Comparator_Difference_Interface[]
      */
     public function getDifferences()

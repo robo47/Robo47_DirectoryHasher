@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * Hasher Interface 
+ */
 interface Robo47_DirectoryHasher_Hasher_Interface
 {
     /**

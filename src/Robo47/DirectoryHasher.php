@@ -19,7 +19,14 @@ class Robo47_DirectoryHasher {
      */
     protected $source;
 
-    public function __construct(Robo47_DirectoryHasher_Source_Interface $source, Robo47_DirectoryHasher_Hasher_Interface $hasher, Robo47_DirectoryHasher_Result $result = null) {
+    /**
+     * @param Robo47_DirectoryHasher_Source_Interface $source
+     * @param Robo47_DirectoryHasher_Hasher_Interface $hasher
+     * @param Robo47_DirectoryHasher_Result $result 
+     */
+    public function __construct(Robo47_DirectoryHasher_Source_Interface $source, 
+            Robo47_DirectoryHasher_Hasher_Interface $hasher, 
+            Robo47_DirectoryHasher_Result $result = null) {
         $this->source = $source;
         $this->hasher = $hasher;
         if (null === $result) {
@@ -29,6 +36,8 @@ class Robo47_DirectoryHasher {
     }
 
     /**
+     * Fetches files from source 
+     * 
      * @return Robo47_DirectoryHasher_Result
      */
     public function run() {
@@ -37,6 +46,8 @@ class Robo47_DirectoryHasher {
     }
 
     /**
+     * Returns the Result
+     * 
      * @return Robo47_DirectoryHasher_Result
      */
     public function getResult() {

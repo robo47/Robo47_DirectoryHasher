@@ -33,7 +33,7 @@ class Robo47_DirectoryHasher_ComparatorTest extends PHPUnit_Framework_TestCase {
     public function testCompareWithNewFile() {
         $result = new Robo47_DirectoryHasher_Comparator();
 
-        $old = new Robo47_DirectoryHasher_Result(                );
+        $old = new Robo47_DirectoryHasher_Result( );
 
         $new = new Robo47_DirectoryHasher_Result(
                         array(
