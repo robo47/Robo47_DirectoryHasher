@@ -14,10 +14,12 @@ class Robo47_DirectoryHasher_Result_File
 
     /**
      * @param string $filename
+     * @param array $hashes
      */
-    public function __construct($filename)
+    public function __construct($filename, array $hashes = array())
     {
         $this->filename = $filename;
+        $this->hashes = $hashes;
     }
 
     /**

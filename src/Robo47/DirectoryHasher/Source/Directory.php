@@ -24,7 +24,6 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
     protected $loaded = false;
 
     /**
-     *
      * @param string $directory
      */
     public function __construct($directory) {
@@ -32,10 +31,18 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
     }
 
     /**
+     * @return string
+     */
+    public function getDirectory()
+    {
+        return $this->directory;
+    }
+
+    /**
      *
      */
     protected function loadFiles() {
-        if ($this->loaded) {
+        if ($this->loaded === true) {
             return;
         }
         $iter = new RecursiveIteratorIterator(

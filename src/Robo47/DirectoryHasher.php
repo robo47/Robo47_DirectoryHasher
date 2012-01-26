@@ -1,27 +1,25 @@
 <?php
 
+class Robo47_DirectoryHasher {
 
-class Robo47_DirectoryHasher
-{
     /**
      *
-     * @var Robo47_DirectoryHasher_Result 
+     * @var Robo47_DirectoryHasher_Result
      */
     protected $result;
-    
+
     /**
      *
-     * @var type 
+     * @var type
      */
     protected $hasher;
-    
+
     /**
-     * @var Robo47_DirectoryHasher_Source_Interface 
+     * @var Robo47_DirectoryHasher_Source_Interface
      */
     protected $source;
-    
-    public function __construct(Robo47_DirectoryHasher_Source_Interface $source, Robo47_DirectoryHasher_Hasher_Interface $hasher, Robo47_DirectoryHasher_Result $result = null)
-    {
+
+    public function __construct(Robo47_DirectoryHasher_Source_Interface $source, Robo47_DirectoryHasher_Hasher_Interface $hasher, Robo47_DirectoryHasher_Result $result = null) {
         $this->source = $source;
         $this->hasher = $hasher;
         if (null === $result) {
@@ -29,21 +27,20 @@ class Robo47_DirectoryHasher
         }
         $this->result = $result;
     }
-    
+
     /**
-     * @return Robo47_DirectoryHasher_Result 
+     * @return Robo47_DirectoryHasher_Result
      */
-    public function run()
-    {
+    public function run() {
         $this->result->addFileResults($this->source->getFileResults());
         $this->hasher->addHashsToResult($this->result);
     }
-    
+
     /**
-     * @return Robo47_DirectoryHasher_Result 
+     * @return Robo47_DirectoryHasher_Result
      */
-    public function getResult()
-    {
+    public function getResult() {
         return $this->result;
     }
+
 }
