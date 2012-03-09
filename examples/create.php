@@ -8,8 +8,13 @@ Robo47_DirectoryHasher_Autoloader::register();
 $pathtohash = realpath(dirname(__FILE__) . '/../') . '/src/';
 $outputfile = realpath(dirname(__FILE__) . '/../') . '/result.xml';
 
+$ignoredDirectories = array(
+    dirname(__FILE__) . '/subdirectory/',
+    dirname(__FILE__) . '/another/subdirectory/'
+);
+
 $writer = new Robo47_DirectoryHasher_Writer_File_Xml();
-$source = new Robo47_DirectoryHasher_Source_Directory($pathtohash);
+$source = new Robo47_DirectoryHasher_Source_Directory($pathtohash, $ignoredDirectories);
 $hasher = new Robo47_DirectoryHasher_Hasher_Multi(
                 array(
                     new Robo47_DirectoryHasher_Hasher_MD5(),
