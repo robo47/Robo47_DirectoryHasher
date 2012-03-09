@@ -4,7 +4,7 @@ class Robo47_DirectoryHasher_Comparator {
 
     /**
      * Compares two Results
-     * 
+     *
      * @param Robo47_DirectoryHasher_Result $old
      * @param Robo47_DirectoryHasher_Result $new
      * @return Robo47_DirectoryHasher_Comparator_Result
@@ -68,6 +68,7 @@ class Robo47_DirectoryHasher_Comparator {
                 );
             }
         }
+
         return $differences;
     }
 

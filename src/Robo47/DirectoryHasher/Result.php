@@ -25,6 +25,7 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
      */
     public function addFileResult(Robo47_DirectoryHasher_Result_File $fileResult) {
         $this->results[] = $fileResult;
+
         return $this;
     }
 
@@ -39,6 +40,7 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
             /* @var $fileResult Robo47_DirectoryHasher_Result_File */
             $this->addFileResult($fileResult);
         }
+
         return $this;
     }
 
@@ -65,6 +67,7 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
                 return true;
             }
         }
+
         return false;
     }
 
@@ -81,6 +84,7 @@ class Robo47_DirectoryHasher_Result implements IteratorAggregate, Countable {
                 return $result;
             }
         }
+
         return null;
     }
 

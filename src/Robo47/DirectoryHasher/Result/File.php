@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Representation of a single File-Resulst 
+ * Representation of a single File-Resulst
  */
 class Robo47_DirectoryHasher_Result_File
 {
@@ -45,6 +45,7 @@ class Robo47_DirectoryHasher_Result_File
     public function addHash($name, $value)
     {
         $this->hashes[$name] = $value;
+
         return $this;
     }
 

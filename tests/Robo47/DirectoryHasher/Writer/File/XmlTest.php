@@ -26,7 +26,7 @@ class Robo47_DirectoryHasher_Writer_File_XmlTest extends PHPUnit_Framework_TestC
                 );
 
         $writer->write($result, dirname(__FILE__) . '/output.xml');
-        
+
         $this->assertFileExists(dirname(__FILE__) . '/output.xml');
         $this->assertXmlStringEqualsXmlFile(dirname(__FILE__) . '/output.xml', '<?xml version="1.0"?><files><file name="/baa/foo.php"><hash hash="md5">baa</hash></file></files>');
     }

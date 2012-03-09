@@ -14,6 +14,7 @@ class Robo47_DirectoryHasher_Result_Factory_Xml {
     public function buildResultFromFile($filename) {
         $document = new DOMDocument();
         $document->load($filename);
+
         return $this->buildResultFromDOM($document);
     }
 
@@ -40,6 +41,7 @@ class Robo47_DirectoryHasher_Result_Factory_Xml {
                 $result->addFileResult($fileResult);
             }
         }
+
         return $result;
     }
 
@@ -65,6 +67,7 @@ class Robo47_DirectoryHasher_Result_Factory_Xml {
                 }
             }
         }
+
         return $hashes;
     }
 

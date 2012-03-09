@@ -26,6 +26,7 @@ class Robo47_DirectoryHasher_Hasher_Multi implements Robo47_DirectoryHasher_Hash
             /* @var $hasher Robo47_DirectoryHasher_Hasher_Interface */
             $hasher->addHashsToFileResult($file);
         }
+
         return $this;
     }
 
@@ -37,6 +38,7 @@ class Robo47_DirectoryHasher_Hasher_Multi implements Robo47_DirectoryHasher_Hash
             /* @var $hasher Robo47_DirectoryHasher_Hasher_Interface */
             $hasher->addHashsToResult($result);
         }
+
         return $this;
     }
 

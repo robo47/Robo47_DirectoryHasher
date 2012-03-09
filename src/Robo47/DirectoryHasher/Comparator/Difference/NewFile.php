@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Difference if a new file is detected 
+ * Difference if a new file is detected
  */
 class Robo47_DirectoryHasher_Comparator_Difference_NewFile implements Robo47_DirectoryHasher_Comparator_Difference_Interface {
 

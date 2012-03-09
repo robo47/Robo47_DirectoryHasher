@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Hasher Interface 
+ * Hasher Interface
  */
 interface Robo47_DirectoryHasher_Hasher_Interface
 {

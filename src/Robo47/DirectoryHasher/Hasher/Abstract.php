@@ -14,6 +14,7 @@ abstract class Robo47_DirectoryHasher_Hasher_Abstract implements Robo47_Director
         foreach ($hashs as $name => $value) {
             $file->addHash($name, $value);
         }
+
         return $this;
     }
 

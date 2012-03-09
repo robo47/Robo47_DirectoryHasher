@@ -111,6 +111,7 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
                 return true;
             }
         }
+
         return false;
     }
 
@@ -119,6 +120,7 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
      */
     public function getFileResults() {
         $this->loadFiles();
+
         return $this->results;
     }
 
