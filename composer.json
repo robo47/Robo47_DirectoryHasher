@@ -1,0 +1,27 @@
+{
+  "name": "robo47/directory-hasher",
+  "description": "DirectoryHasher is a small library to create files with hashes and file-informations from a directory-structure to compare it with another result later.",
+  "type": "library",
+  "keywords":  [ "hash", "directory"],
+  "homepage": "https://github.com/robo47/Robo47_DirectoryHasher",
+  "license": "MIT",
+  "authors": [
+  {
+    "name": "Benjamin Steininger",
+    "email": "robo47@robo47.net",
+    "homepage": "http://www.benjamin-steininger.de"
+  }
+  ],
+  "require": {
+    "php": ">=5.2.4"
+  },
+  "suggest":
+  {
+    "swiftmailer/swiftmailer": "*"
+  },
+  "autoload": {
+    "psr-0": {
+      "Robo47_DirectoryHasher_": "src/"
+    }
+  }
+}
