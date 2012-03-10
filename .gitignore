@@ -1,5 +1,5 @@
 /build/
 /nbproject/
 /examples/swiftmailer/
+/composer.phar
 /vendor/
-composer.phar
