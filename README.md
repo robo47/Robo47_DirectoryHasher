@@ -26,6 +26,5 @@ check a directory and send mails if something changes.
 Further unimplemented ideas
 ===========================
 
- - Additional Directory Source which allows to exclude directories (cache/tmp-directories)
  - More flexible Comparator
  - Way to filter differences which can be ignored (eg. based on directory)
