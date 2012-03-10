@@ -1,7 +1,7 @@
 DirectoryHasher
 ===============
 
-[![Build Status](https://secure.travis-ci.org/robo47/Robo47_DirectoryHasherg.png)](robo47/Robo47_DirectoryHasherg)
+[![Build Status](https://secure.travis-ci.org/robo47/Robo47_DirectoryHasher.png)](robo47/Robo47_DirectoryHasher)
 
 DirectoryHasher is a small library to create files with hashes and file-informations from a directory-structure to compare it with another result later.
 
