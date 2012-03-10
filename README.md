@@ -10,21 +10,21 @@ This allows to detect changes on your webspace which may come from intrusions
 For compatiblity reasons it should be php 5.2 compliant.
 
 Requirements
-============
+------------
 
 PHP 5.2
  - DOM
  - SPL
 
 Example
-=======
+-------
 
 In /examples/ you find some hackish example scripts which create result-files, 
 compares them and one which can be used together with a cronjob to regulary
 check a directory and send mails if something changes.
 
 Further unimplemented ideas
-===========================
+---------------------------
 
  - More flexible Comparator
  - Way to filter differences which can be ignored (eg. based on directory)
