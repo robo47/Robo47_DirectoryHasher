@@ -34,18 +34,21 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
      * @param string $directory
      * @param array $ignoredDirectories
      */
-    public function __construct($directory, array $ignoredDirectories = array()) {
+    public function __construct($directory, array $ignoredDirectories = array())
+    {
         $this->directory = realpath($directory);
         if (false === $directory) {
-            $message = sprintf('Path "%s" does not exist', $directory );
+            $message = sprintf('Path "%s" does not exist', $directory);
             throw new Exception($message);
         }
 
-        foreach($ignoredDirectories as $key => $ignoredDirectory)
+        foreach ($ignoredDirectories as $key => $ignoredDirectory)
         {
             $ignoredDirectories[$key] = realpath($ignoredDirectory);
             if (false === $directory) {
-                $message = sprintf('Ignored Path "%s" does not exist', $ignoredDirectory );
+                $message = sprintf(
+                    'Ignored Path "%s" does not exist', $ignoredDirectory
+                );
                 throw new Exception($message);
             }
         }
@@ -77,19 +80,31 @@ class Robo47_DirectoryHasher_Source_Directory implements Robo47_DirectoryHasher_
         if ($this->loaded === true) {
             return;
         }
-        $iter = new RecursiveIteratorIterator(
-                        new RecursiveDirectoryIterator(
-                                $this->directory
-                        ),
-                        RecursiveIteratorIterator::LEAVES_ONLY
-        );
+        $iter = new RecursiveDirectoryIterator($this->directory);
+        $this->iterateFiles($iter);
+        $this->loaded = true;
+    }
+
+    /**
+     * Not using recursiveDirectoryIterator to savely ignore unreadable directories
+     * 
+     * @param RecursiveDirectoryIterator $iter
+     */
+    protected function iterateFiles(RecursiveDirectoryIterator $iter)
+    {
         foreach ($iter as $file) {
-            /* @var $file SplFileInfo */
-            if (!$this->isIgnored($file) && !$this->isIgnoredDirectory($file)) {
-                $this->results[] = new Robo47_DirectoryHasher_Result_File($file);
+            if (!is_readable($file)) {
+                continue;
+            } else if(!$iter->isDot()) {
+                if (is_file((string) $file)) {
+                    if (!$this->isIgnored($file) && !$this->isIgnoredDirectory($file)) {
+                        $this->results[] = new Robo47_DirectoryHasher_Result_File($file);
+                    }
+                } else if (is_dir(($file))) {
+                    $this->iterateFiles(new RecursiveDirectoryIterator((string) $file));
+                }
             }
         }
-        $this->loaded = true;
     }
 
     /**
